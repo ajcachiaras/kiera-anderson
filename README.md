@@ -44,8 +44,12 @@ python3 -m http.server 8000
 
 ## Publishing
 
-`.github/workflows/pages.yml` uploads the repository root to GitHub Pages on
-every push to `main`, and can also be run by hand from the Actions tab. Pages
-must be set to **Settings -> Pages -> Source: GitHub Actions**.
+The site is plain static files at the repository root, so GitHub Pages can serve
+it straight from the branch -- no build step and no Actions workflow.
+
+**Settings -> Pages -> Source: Deploy from a branch -> `main` / `(root)`**
+
+`.nojekyll` is committed so Pages serves the files as-is rather than running
+them through Jekyll.
 
 Live at <https://ajcachiaras.github.io/kiera-anderson/>.
